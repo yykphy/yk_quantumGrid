@@ -264,9 +264,9 @@ def main(number_of_time_intervals, time_step, want_to_plot_animate):
         " |gamma|^2 = ",
         np.abs(gamma_residue) ** 2,
     )
-    # Plot wave function -- It must be type np.complex
-    Cinitial = np.zeros((fem_dvr.nbas), dtype=np.complex)
-    wfcnInitialPlot = np.zeros((fem_dvr.nbas), dtype=np.complex)
+    # Plot wave function -- It must be type complex
+    Cinitial = np.zeros((fem_dvr.nbas), dtype=complex)
+    wfcnInitialPlot = np.zeros((fem_dvr.nbas), dtype=complex)
     for j in range(0, fem_dvr.nbas):
         Cinitial[j] = wfcnPlot[j]
 
@@ -325,9 +325,9 @@ def main(number_of_time_intervals, time_step, want_to_plot_animate):
             )
     #
     # ================# Initialize wave function at t = 0 ================================
-    #   It must be type np.complex
-    Cinitial = np.zeros((fem_dvr.nbas), dtype=np.complex)
-    wfcnInitialPlot = np.zeros((fem_dvr.nbas), dtype=np.complex)
+    #   It must be type complex
+    Cinitial = np.zeros((fem_dvr.nbas), dtype=complex)
+    wfcnInitialPlot = np.zeros((fem_dvr.nbas), dtype=complex)
     for j in range(0, fem_dvr.nbas):
         #
         #  Displaced Gaussian packet in well. Displace to larger R because displacing
@@ -355,7 +355,7 @@ def main(number_of_time_intervals, time_step, want_to_plot_animate):
     # d = 0.1746
     # omega = np.sqrt((2.e0/mu)*d*a**2)
     # T_revival = 4*np.pi*mu/a**2 # for the morse oscillator
-    # number_of_time_intervals = 25*np.int((tfinal-tinitial)*omega/(2.0*np.pi))
+    # number_of_time_intervals = 25*int((tfinal-tinitial)*omega/(2.0*np.pi))
     # print("T_revival = ",T_revival," atomic time units ",T_revival*24.1888/1000.0," femtoseconds")
     tfinal = 5000  # specified in atomic time units
     print(
@@ -397,8 +397,8 @@ def main(number_of_time_intervals, time_step, want_to_plot_animate):
     for i_time_interval in range(0, number_of_time_intervals):
         t_start = tinitial + i_time_interval * t_interval
         t_finish = tinitial + (i_time_interval + 1) * t_interval
-        N_time_steps = np.int(t_interval / time_step)
-        Delta_t = t_interval / np.float(N_time_steps)
+        N_time_steps = int(t_interval / time_step)
+        Delta_t = t_interval / float(N_time_steps)
         #
         # Check norm of initial wavefunction on real part of ECS Contour
         #
@@ -559,6 +559,8 @@ def main(number_of_time_intervals, time_step, want_to_plot_animate):
         #  show the animation
         # ==============================================================================
         anim.save("Plot_Output/H2_wavepacket.mp4")
+        # anim.save("H2_wavepacket.mp4")
+        
         plt.show()
         print("done")
 

@@ -171,7 +171,7 @@ class Potential(object):
         y = np.exp(-a * (r - re))
         # j value for centrifugal potential.  mu defined in main part of script above
         j = 0  # Morse potential has rotational predissociation resonances for some j
-        pot = d * (y ** 2 - 2.0 * y) + np.float(j * (j + 1)) / (
+        pot = d * (y ** 2 - 2.0 * y) + float(j * (j + 1)) / (
             2.0 * mu * r ** 2
         )
         return pot

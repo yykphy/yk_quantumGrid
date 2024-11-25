@@ -283,10 +283,10 @@ def main(want_to_plot):
         print("Norm of wave function being plotted is ", np.sqrt(norm_squared))
         #
         # ================# Plot the  wave function specified by n_Plot above======================
-        #   It must be type np.complex for this general wave function plotting logic
+        #   It must be type complex for this general wave function plotting logic
         #
-        Cinitial = np.zeros((fem_dvr.nbas), dtype=np.complex)
-        wfcnInitialPlot = np.zeros((fem_dvr.nbas), dtype=np.complex)
+        Cinitial = np.zeros((fem_dvr.nbas), dtype=complex)
+        wfcnInitialPlot = np.zeros((fem_dvr.nbas), dtype=complex)
         for j in range(0, fem_dvr.nbas):
             Cinitial[j] = wfcnPlot[j]
         #
@@ -318,7 +318,7 @@ def main(want_to_plot):
         #
         # plot square of wave function (radial probability distribution)
         #
-        Csquared = np.zeros(fem_dvr.nbas, dtype=np.complex)
+        Csquared = np.zeros(fem_dvr.nbas, dtype=complex)
         raverage = 0.0
         for i in range(fem_dvr.nbas):
             Csquared[i] = (Cinitial[i] ** 2) / np.sqrt(fem_dvr.w_pts[i + 1])

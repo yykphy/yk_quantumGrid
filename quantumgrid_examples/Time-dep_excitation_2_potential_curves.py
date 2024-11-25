@@ -292,13 +292,13 @@ def main(number_of_time_intervals, time_step, want_to_plot_animate):
     #
     #  Bound state of one of the two uncoupled Hamiltonians chosen as initial state
     #
-    Cinitial = np.zeros(2 * fem_dvr.nbas, dtype=np.complex)
+    Cinitial = np.zeros(2 * fem_dvr.nbas, dtype=complex)
     for i in range(0, 2 * fem_dvr.nbas):
         Cinitial[i] = (
             wfcnPlot[i] + 0.0 * 1j
         )  # this loop was necessary to make Cinitial an array of complex numbers
-    wfcnInitialPlot1 = np.zeros(fem_dvr.nbas, dtype=np.complex)
-    wfcnInitialPlot2 = np.zeros(fem_dvr.nbas, dtype=np.complex)
+    wfcnInitialPlot1 = np.zeros(fem_dvr.nbas, dtype=complex)
+    wfcnInitialPlot2 = np.zeros(fem_dvr.nbas, dtype=complex)
     norm_1 = 0.0
     norm_2 = 0.0
     for j in range(0, fem_dvr.nbas):
@@ -367,8 +367,8 @@ def main(number_of_time_intervals, time_step, want_to_plot_animate):
     for i_time_interval in range(0, number_of_time_intervals):
         t_start = tinitial + i_time_interval * t_interval
         t_finish = tinitial + (i_time_interval + 1) * t_interval
-        N_time_steps = np.int(t_interval / time_step)
-        Delta_t = t_interval / np.float(N_time_steps)
+        N_time_steps = int(t_interval / time_step)
+        Delta_t = t_interval / float(N_time_steps)
         #
         # Check norm of initial wavefunction
         #
@@ -455,8 +455,8 @@ def main(number_of_time_intervals, time_step, want_to_plot_animate):
         number_string = str(t_finish)
         title = "Wavefunction at t = " + number_string
 
-        wfcn_at_t_Plot1 = np.zeros(fem_dvr.nbas, dtype=np.complex)
-        wfcn_at_t_Plot2 = np.zeros(fem_dvr.nbas, dtype=np.complex)
+        wfcn_at_t_Plot1 = np.zeros(fem_dvr.nbas, dtype=complex)
+        wfcn_at_t_Plot2 = np.zeros(fem_dvr.nbas, dtype=complex)
         for j in range(0, fem_dvr.nbas):
             wfcn_at_t_Plot1[j] = Ctfinal[j]
             wfcn_at_t_Plot2[j] = Ctfinal[j + fem_dvr.nbas]
